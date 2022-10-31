@@ -50,10 +50,10 @@ main {
     text-align: left;
 }
 
-.show {
-    visibility: visible;
+#gt-box {
+    display: block;
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
 }

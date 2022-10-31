@@ -31,15 +31,13 @@
         </div>
     </header>
     <main id="reportToPrint">
-        <span id="source-box">
-            <h3>source:</h3>
-            <select name="source" id="chosen-source" value="gt">
-                <option value="gt">Google News</option>
-                <option value="tw">Twitter</option>
-            </select>
-        </span>
+        <h3>source:</h3>
+        <select name="source" id="chosen-source" value="gt">
+            <option value="gt">Google News</option>
+            <option value="tw">Twitter</option>
+        </select>
         <br />
-        <span id="topic-box">
+        <span id="gt-box">
             <h3>topics:</h3>
             <select name="topics" id="chosen-topic" value="hw">
                 <option value="hw">Health & Wellbeing</option>
@@ -50,9 +48,9 @@
                 <option value="ce">Civic Engagement</option>
                 <option value="re">Recreation & Entertainment</option>
             </select>
-            <canvas id="chartLine"></canvas>
         </span>
-        <canvas id="chartBar"></canvas>
+        <br />
+        <canvas id="chartLine"></canvas>
     </main>
     <footer>
         <div class="flex">
@@ -63,7 +61,7 @@
     </footer>
     <script src="node_modules/chart.js/dist/chart.js"></script>
     <script>
-        // Lines
+
         const chartLine = new Chart(document.getElementById('chartLine'), {
             data: {
                 datasets: [{
@@ -84,33 +82,6 @@
                 }
             }
         });
-
-        // Bar
-        const chartBar = new Chart(document.getElementById('chartBar'), {
-            data: {
-                datasets: [{
-                    type: 'bar',
-                    label: 'Population of...',
-                    backgroundColor: [
-                        'rgba(3, 4, 94, 0.8)',
-                        'rgba(2, 62, 138, 0.8)',
-                        'rgba(0, 150, 199, 0.8)',
-                        'rgba(72, 202, 228, 0.2)'
-                    ],
-                    data: [15, 20, 30, 35]
-                }],
-                labels: ['Rural', 'City', 'City Outskirts', 'Capital'],
-                options: {
-                    scales: {
-                        y: {
-                            max: 40,
-                            min: 0
-                        }
-                    }
-                }
-            }
-        });
-
 
     </script>
 </body>
