@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media & News Trends</title>
+    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Social Media & News Trends</h1>
+        <div class="flex">
+            <span>
+                <h3>in </h3>
+                <select name="countries" id="chosen-country" value="au">
+                    <option value="au">Australia</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="us">United States</option>
+                    <option value="nz">New Zealand</option>
+                </select>
+            </span>
+            <span>
+                <h3>Monday</h3> <br />
+                <h3>December 12, 2020</h3> <br /><br />
+                <h3><a>PRINT</a></h3>
+            </span>
+        </div>
+    </header>
+    <main id="reportToPrint">
+        <span id="source-box">
+            <h3>source:</h3>
+            <select name="source" id="chosen-source" value="gt">
+                <option value="gt">Google News</option>
+                <option value="tw">Twitter</option>
+            </select>
+        </span>
+        <br />
+        <span id="topic-box">
+            <h3>topics:</h3>
+            <select name="topics" id="chosen-topic" value="hw">
+                <option value="hw">Health & Wellbeing</option>
+                <option value="lh">Life at Home</option>
+                <option value="jf">Jobs & Finance</option>
+                <option value="hs">Hobbies & Special Interests</option>
+                <option value="fr">Family & Relationships</option>
+                <option value="ce">Civic Engagement</option>
+                <option value="re">Recreation & Entertainment</option>
+            </select>
+            <canvas id="chartLine"></canvas>
+        </span>
+        <canvas id="chartBar"></canvas>
+    </main>
+    <footer>
+        <div class="flex">
+            <h3><a>PRINT RAW DATA</a></h3>
+            <h3><a href="faq.html">FAQ</a></h3>
+        </div>
+        <h3>DataLab @ 2022</h3>
+    </footer>
+    <script src="node_modules/chart.js/dist/chart.js"></script>
+    <script>
+        // Lines
+        const chartLine = new Chart(document.getElementById('chartLine'), {
+            data: {
+                datasets: [{
+                    type: 'line',
+                    label: 'Who will become the next PM of ...?',
+                    backgroundColor: 'rgba(3, 4, 94, 0.8)',
+                    data: [4, 6, 8, 10, 2, 3, 4, 6]
+                }],
+                labels: ['01/02/2022', '07/02/2022', '14/02/2022', '21/02/2022', '28/02/2022', '01/03/2022', '14/03/2022', '21/03/2022'],
+            },
+            options: {
+                scales: {
+                    y: {
+                        max: 10,
+                        min: 1,
+                        reverse: true
+                    }
+                }
+            }
+        });
+
+        // Bar
+        const chartBar = new Chart(document.getElementById('chartBar'), {
+            data: {
+                datasets: [{
+                    type: 'bar',
+                    label: 'Population of...',
+                    backgroundColor: [
+                        'rgba(3, 4, 94, 0.8)',
+                        'rgba(2, 62, 138, 0.8)',
+                        'rgba(0, 150, 199, 0.8)',
+                        'rgba(72, 202, 228, 0.2)'
+                    ],
+                    data: [15, 20, 30, 35]
+                }],
+                labels: ['Rural', 'City', 'City Outskirts', 'Capital'],
+                options: {
+                    scales: {
+                        y: {
+                            max: 40,
+                            min: 0
+                        }
+                    }
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

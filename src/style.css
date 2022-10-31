@@ -1,0 +1,59 @@
+body,
+select {
+    font-family: monospace;
+    text-align: center;
+}
+
+select,
+a {
+    padding: 5px 10px;
+    margin: 10px 10px;
+    outline: none;
+    border: 1px solid grey;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus,
+a:hover {
+    color: inherit;
+    box-shadow: -2px 2px 0px rgba(3, 4, 94, 0.8);
+}
+
+
+h3 {
+    display: inline;
+}
+
+header,
+main,
+footer {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+canvas {
+    padding: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+span:last-child {
+    text-align: right;
+}
+
+main {
+    text-align: left;
+}
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
+}
