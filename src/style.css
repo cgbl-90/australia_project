@@ -5,17 +5,21 @@ select {
 }
 
 select,
-a {
+a,
+button {
     padding: 5px 10px;
     margin: 10px 10px;
     outline: none;
     border: 1px solid grey;
     text-decoration: none;
     color: inherit;
+    background-color: white;
 }
 
 a:focus,
-a:hover {
+a:hover,
+button:focus,
+button:hover {
     color: inherit;
     box-shadow: -2px 2px 0px rgba(3, 4, 94, 0.8);
 }

@@ -21,45 +21,52 @@
                     <option value="uk">United Kingdom</option>
                     <option value="us">United States</option>
                     <option value="nz">New Zealand</option>
+                    <option value="nz">All countries</option>
                 </select>
             </span>
             <span>
                 <h3>Monday</h3> <br />
                 <h3>December 12, 2020</h3> <br /><br />
-                <h3><a>PRINT</a></h3>
+                <!-- <button type="button" onclick="printJS({ printable: 'printJS-form', type: 'html' })">
+                    PRINT PDF
+                </button>  -->
+                </h3>
             </span>
         </div>
     </header>
     <main id="reportToPrint">
-        <h3>source:</h3>
-        <select name="source" id="chosen-source" value="gt">
-            <option value="gt">Google News</option>
-            <option value="tw">Twitter</option>
-        </select>
-        <br />
-        <span id="gt-box">
-            <h3>topics:</h3>
-            <select name="topics" id="chosen-topic" value="hw">
-                <option value="hw">Health & Wellbeing</option>
-                <option value="lh">Life at Home</option>
-                <option value="jf">Jobs & Finance</option>
-                <option value="hs">Hobbies & Special Interests</option>
-                <option value="fr">Family & Relationships</option>
-                <option value="ce">Civic Engagement</option>
-                <option value="re">Recreation & Entertainment</option>
+        <form method="post" action="#" id="printJS-form">
+            <h3>source:</h3>
+            <select name="source" id="chosen-source" value="gt">
+                <option value="gt">Google News</option>
+                <option value="tw">Twitter</option>
             </select>
-        </span>
-        <br />
-        <canvas id="chartLine"></canvas>
+            <br />
+            <span id="gt-box">
+                <h3>topics:</h3>
+                <select name="topics" id="chosen-topic" value="hw">
+                    <option value="hw">Health & Wellbeing</option>
+                    <option value="lh">Life at Home</option>
+                    <option value="jf">Jobs & Finance</option>
+                    <option value="hs">Hobbies & Special Interests</option>
+                    <option value="fr">Family & Relationships</option>
+                    <option value="ce">Civic Engagement</option>
+                    <option value="re">Recreation & Entertainment</option>
+                </select>
+            </span>
+            <br />
+            <canvas id="chartLine"></canvas>
+        </form>
     </main>
     <footer>
         <div class="flex">
-            <h3><a>PRINT RAW DATA</a></h3>
+            <!-- <h3><a>PRINT EXCEL</a></h3> -->
             <h3><a href="faq.html">FAQ</a></h3>
         </div>
         <h3>DataLab @ 2022</h3>
     </footer>
     <script src="node_modules/chart.js/dist/chart.js"></script>
+    <script src="print.js"></script>
     <script>
 
         const chartLine = new Chart(document.getElementById('chartLine'), {
