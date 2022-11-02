@@ -37,7 +37,7 @@
     <main id="reportToPrint">
         <form method="post" action="#" id="printJS-form">
             <h3>source:</h3>
-            <select name="source" id="chosen-source" value="gt">
+            <select name="source" id="chosen-source" value="gt" onchange="showDiv('gt-box', this)">
                 <option value="gt">Google News</option>
                 <option value="tw">Twitter</option>
             </select>
@@ -69,6 +69,10 @@
     <script src="node_modules/chart.js/dist/chart.js"></script>
     <script src="print.js"></script>
     <script>
+
+        function showDiv(divId, element) {
+            document.getElementById(divId).style.display = element.value == "gt" ? 'block' : 'none';
+        }
 
         const chartLine = new Chart(document.getElementById('chartLine'), {
             data: {
